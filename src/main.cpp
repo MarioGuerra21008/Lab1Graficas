@@ -214,7 +214,10 @@ void fillPolygon(unsigned char* framebuffer, int width, int height, const std::v
 
 void render(unsigned char* framebuffer, int width, int height)
 {
-
+    Vertex polygon1Points[] = { {165, 380}, {185, 360}, {180, 330}, {207, 345}, {233, 330}, {230, 360}, {250, 380}, {220, 385}, {205, 410}, {193, 383} };
+    std::vector<Vertex> polygon1Vertices(polygon1Points, polygon1Points + sizeof(polygon1Points) / sizeof(polygon1Points[0]));
+    fillPolygon(framebuffer, width, height, polygon1Vertices, Color(255, 255, 0));
+    drawPolygon(framebuffer, width, height, polygon1Vertices, Color(255, 255, 255));
 }
 
 int main()
