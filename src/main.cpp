@@ -214,10 +214,10 @@ void fillPolygon(unsigned char* framebuffer, int width, int height, const std::v
 
 void render(unsigned char* framebuffer, int width, int height)
 {
-    Vertex polygonPoints[] = { {200, 100}, {300, 100}, {200, 0}, {300, 180} };
+    Vertex polygonPoints[] = { {321, 335}, {288, 286}, {339, 251}, {374, 302} };
     std::vector<Vertex> polygonVertices(polygonPoints, polygonPoints + sizeof(polygonPoints) / sizeof(polygonPoints[0]));
-    drawPolygon(framebuffer, width, height, polygonVertices, Color(0, 0, 0));
-    fillPolygon(framebuffer, width, height, polygonVertices, Color(255, 255, 0));
+    drawPolygon(framebuffer, width, height, polygonVertices, Color(255, 255, 255));
+    fillPolygon(framebuffer, width, height, polygonVertices, Color(0, 0, 255));
 }
 
 int main()
@@ -243,7 +243,7 @@ int main()
     render(framebuffer, width, height);
 
     // Write the image to a BMP file
-    renderBuffer("out.bmp", width, height, framebuffer);
+    renderBuffer("polygon2.bmp", width, height, framebuffer);
 
     // Clean up the memory
     delete[] framebuffer;
