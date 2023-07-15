@@ -225,6 +225,22 @@ void render(unsigned char* framebuffer, int width, int height)
     fillPolygon(framebuffer, width, height, polygon2Vertices, Color(0, 0, 255));
     drawPolygon(framebuffer, width, height, polygon2Vertices, Color(255, 255, 255));
 
+    Vertex polygon3Points[] = { {377, 249}, {411, 197}, {436, 249} };
+    std::vector<Vertex> polygon3Vertices(polygon3Points, polygon3Points + sizeof(polygon3Points) / sizeof(polygon3Points[0]));
+    fillPolygon(framebuffer, width, height, polygon3Vertices, Color(255, 0, 0));
+    drawPolygon(framebuffer, width, height, polygon3Vertices, Color(255, 255, 255));
+
+    Vertex polygon4Points[] = { {413, 177}, {448, 159}, {502, 88}, {553, 53}, {535, 36}, {676, 37}, {660, 52},
+                                {750, 145}, {761, 179}, {672, 192}, {659, 214}, {615, 214}, {632, 230}, {580, 230},
+                                {597, 215}, {552, 214}, {517, 144}, {466, 180} };
+    std::vector<Vertex> polygon4Vertices(polygon4Points, polygon4Points + sizeof(polygon4Points) / sizeof(polygon4Points[0]));
+    fillPolygon(framebuffer, width, height, polygon4Vertices, Color(0, 255, 0));
+    drawPolygon(framebuffer, width, height, polygon4Vertices, Color(255, 255, 255));
+
+    Vertex polygon5Points[] = { {682, 175}, {708, 120}, {735, 148}, {739, 170} };
+    std::vector<Vertex> polygon5Vertices(polygon5Points, polygon5Points + sizeof(polygon5Points) / sizeof(polygon5Points[0]));
+    fillPolygon(framebuffer, width, height, polygon5Vertices, Color(0, 0, 0));
+    drawPolygon(framebuffer, width, height, polygon5Vertices, Color(255, 255, 255));
 }
 
 int main()
